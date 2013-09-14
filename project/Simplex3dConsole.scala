@@ -75,6 +75,7 @@ object Simplex3dConsole extends Build {
     id = "console",
     base = file("simplex3d-console-core"),
     settings = buildSettings ++ Common.lwjglSettings ++ Seq(
+	  name := "simplex3d-console-core",
       mainClass := Some("simplex3d.console.ConsoleFrame"),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
       unmanagedJars in Compile <<= baseDirectory map { base => (base / "lib" ** "*.jar").classpath },

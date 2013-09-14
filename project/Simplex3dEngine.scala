@@ -29,12 +29,6 @@ object Simplex3dEngine extends Build {
     licenses := Seq(("LGPLv3+", new URL("http://www.gnu.org/licenses/lgpl.html")))
   )
 
-  lazy val root = Project(
-    id = "engine",
-    base = file("."),
-    settings = buildSettings
-  ) aggregate(core, sceneGraph, renderer, backendOpengl, backendLwjgl, vanilla)
-  
   lazy val core = Project(
     id = "engine-core",
     base = file("simplex3d-engine-core"),
@@ -142,7 +136,9 @@ object Simplex3dEngine extends Build {
   lazy val example = Project(
     id = "engine-example",
     base = file("simplex3d-engine-example"),
-    settings = buildSettings ++ Common.exampleSettings
+    settings = buildSettings ++ Common.exampleSettings ++ Seq(
+	  name := "simplex3d-engine-example"
+	)
   ) dependsOn(
     core, sceneGraph, renderer, backendOpengl, backendLwjgl, vanilla,
     Simplex3dAlgorithm.mesh, Simplex3dAlgorithm.noise

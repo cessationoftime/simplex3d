@@ -82,7 +82,9 @@ object Simplex3dMath extends Build {
   lazy val example = Project(
     id = "math-example",
     base = file("simplex3d-math-example"),
-    settings = buildSettings ++ Common.exampleSettings
+    settings = buildSettings ++ Common.exampleSettings ++ Seq(
+	  name := "simplex3d-math-example"
+	)
   ) dependsOn(core, double, Simplex3dScript.core)
 }
 

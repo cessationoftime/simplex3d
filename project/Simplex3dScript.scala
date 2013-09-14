@@ -34,7 +34,7 @@ object Simplex3dScript extends Build {
     id = "script",
     base = file("simplex3d-script-core"),
     settings = buildSettings ++ Seq(
-      name := "simplex3d-script",
+      name := "simplex3d-script-core",
       description := "Scripting API."
     )
   ) dependsOn(
@@ -47,6 +47,8 @@ object Simplex3dScript extends Build {
   lazy val example = Project(
     id = "script-example",
     base = file("simplex3d-script-example"),
-    settings = buildSettings ++ Common.exampleSettings
+    settings = buildSettings ++ Common.exampleSettings ++ Seq(
+	   name := "simplex3d-script-example"
+	)
   ) dependsOn(core)
 }

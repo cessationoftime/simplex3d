@@ -88,6 +88,8 @@ object Simplex3dData extends Build {
   lazy val example = Project(
     id = "data-example",
     base = file("simplex3d-data-example"),
-    settings = buildSettings ++ Common.exampleSettings
+    settings = buildSettings ++ Common.exampleSettings ++ Seq(
+	   name := "simplex3d-data-example"
+	)
   ) dependsOn(core, double, format)
 }

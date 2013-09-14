@@ -86,6 +86,8 @@ object Simplex3dAlgorithm extends Build {
   lazy val example = Project(
     id = "algorithm-example",
     base = file("simplex3d-algorithm-example"),
-    settings = buildSettings ++ Common.exampleSettings
+    settings = buildSettings ++ Common.exampleSettings ++ Seq(
+	  name := "simplex3d-algorithm-example"
+	)
   ) dependsOn(intersection, mesh, noise, Simplex3dScript.core)
 }

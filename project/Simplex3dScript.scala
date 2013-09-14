@@ -32,12 +32,11 @@ object Simplex3dScript extends Build {
   
   lazy val core = Project(
     id = "script",
-    base = file("Simplex3dScript"),
+    base = file("simplex3d-script-core"),
     settings = buildSettings ++ Seq(
       name := "simplex3d-script",
       description := "Scripting API.",
-      target := new File("target/script"),
-      scalaSource in Compile <<= baseDirectory(_ / "src")
+      target := new File("target/script")
     )
   ) dependsOn(
     Simplex3dMath.core, Simplex3dMath.double,
@@ -48,7 +47,7 @@ object Simplex3dScript extends Build {
   
   lazy val example = Project(
     id = "script-example",
-    base = file("Simplex3dScript"),
+    base = file("simplex3d-script-example"),
     settings = buildSettings ++ Common.exampleSettings ++ Seq(
       target := new File("target/script/example")
     )

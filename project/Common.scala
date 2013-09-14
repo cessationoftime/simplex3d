@@ -21,7 +21,7 @@ import sbt._
 import Keys._
 
 
-object Common extends Build {
+object Common {
   
   val buildSettings = Defaults.defaultSettings ++ Seq(
     scalaVersion := Simplex3d.ScalaVersion,
@@ -44,6 +44,19 @@ object Common extends Build {
     val name = s.key.key.label
     name == "publish" || name == "publish-local"
   }
+  
+  //create Bench Configuration Scope
+  lazy val Bench = config("bench")
+  
+  lazy val benchSettings: Seq[Setting[_]] = 
+     // Add the src/bench/scala/ compilation configuration.
+     // This configures sources, classpaths, output directories, REPL, scalac, ...
+     inConfig(Bench)(Defaults.configSettings) ++ Seq(
+        // example dependency just for Bench
+        //libraryDependencies += "org.example" % "demo" % "1.0" % Bench,
+        // register the custom bench configuration
+        ivyConfigurations += Bench
+     )
   
   var out = false
   val publishSettings: Seq[Setting[_]] = publishDefaults ++ Seq(
@@ -117,9 +130,7 @@ object Common extends Build {
     }
   )
   
-  val exampleSettings = lwjglSettings ++ Seq(
-    scalaSource in Compile <<= baseDirectory(_ / "example"),
-    
+  val exampleSettings = lwjglSettings ++ Seq(    
     compile in Compile <<= (scalaSource in Compile, classDirectory in Compile, compile in Compile) map {
     (src, classes, compileRes) =>
       val oldFiles = new FileSet(classes, List(""".*\.scala"""))

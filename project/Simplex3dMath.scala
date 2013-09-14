@@ -38,54 +38,51 @@ object Simplex3dMath extends Build {
   
   lazy val core = Project(
     id = "math-core",
-    base = file("Simplex3dMath"),
+    base = file("simplex3d-math-core"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-core",
       description := "Vector Math DSL, Core Module.",
-      target := new File("target/math/core"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/core")
+      target := new File("target/math/core")
     )
   )
   
   lazy val double = Project(
     id = "math-double",
-    base = file("Simplex3dMath"),
+    base = file("simplex3d-math-double"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-double",
       description := "Vector Math DSL, Double Module.",
-      target := new File("target/math/double"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/double")
+      target := new File("target/math/double")
     )
   ) dependsOn(core)
   
   lazy val float = Project(
     id = "math-float",
-    base = file("Simplex3dMath"),
+    base = file("simplex3d-math-float"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-float",
       description := "Vector Math DSL, Float Module.",
-      target := new File("target/math/float"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/float")
+      target := new File("target/math/float")
     )
   ) dependsOn(core)
   
-  lazy val doc = Project(
-    id = "math-doc",
-    base = file("Simplex3dMath"),
-    settings = buildSettings ++ Seq(
-      target := new File("target/math/doc"),
-      excludeFilter := "*",
-      sourceGenerators in Compile <+= baseDirectory map { base =>
-        StripSwizzling.stripCopy(base / "src/core", new File("target/math/doc/modified-src")) ++
-        StripSwizzling.stripCopy(base / "src/float", new File("target/math/doc/modified-src")) ++
-        StripSwizzling.stripCopy(base / "src/double", new File("target/math/doc/modified-src"))
-      }
-    )
-  )
+//  lazy val doc = Project(
+//    id = "math-doc",
+//    base = file("simplex3d-math"),
+//    settings = buildSettings ++ Seq(
+//      target := new File("target/math/doc"),
+//      excludeFilter := "*",
+//      sourceGenerators in Compile <+= baseDirectory map { base =>
+//        StripSwizzling.stripCopy(base / "src/core", new File("target/math/doc/modified-src")) ++
+//        StripSwizzling.stripCopy(base / "src/float", new File("target/math/doc/modified-src")) ++
+//        StripSwizzling.stripCopy(base / "src/double", new File("target/math/doc/modified-src"))
+//      }
+//    )
+//  )
   
   lazy val test = Project(
     id = "math-test",
-    base = file("Simplex3dMath"),
+    base = file("simplex3d-math-test"),
     settings = buildSettings ++ Common.testSettings ++ Seq(
       name := "simplex3d-math-test",
       description := "Vector Math DSL, Tests.",
@@ -96,7 +93,7 @@ object Simplex3dMath extends Build {
   
   lazy val example = Project(
     id = "math-example",
-    base = file("Simplex3dMath"),
+    base = file("simplex3d-math-example"),
     settings = buildSettings ++ Common.exampleSettings ++ Seq(
       target := new File("target/math/example")
     )

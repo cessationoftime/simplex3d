@@ -39,13 +39,12 @@ object Simplex3dEngine extends Build {
   
   lazy val core = Project(
     id = "engine-core",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-core"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-engine-core",
       description := "Simplex3D Engine, Core Module.",
       target := new File("target/engine/core"),
-      libraryDependencies += "org.scala-lang" % "scala-reflect" % Simplex3d.ScalaVersion,
-      scalaSource in Compile <<= baseDirectory(_ / "src/core")
+      libraryDependencies += "org.scala-lang" % "scala-reflect" % Simplex3d.ScalaVersion
     )
   ) dependsOn(
     Simplex3dMath.core, Simplex3dMath.double,
@@ -55,108 +54,103 @@ object Simplex3dEngine extends Build {
   
   lazy val sceneGraph = Project(
     id = "engine-scenegraph",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-scenegraph"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-engine-scenegraph",
       description := "Simplex3D Engine, Scenegraph Module.",
-      target := new File("target/engine/scenegraph"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/scenegraph")
+      target := new File("target/engine/scenegraph")
     )
   ) dependsOn(core)
   
   lazy val renderer = Project(
     id = "engine-renderer",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-renderer"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-engine-renderer",
       description := "Simplex3D Engine, Renderer Module.",
-      target := new File("target/engine/renderer"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/renderer")
+      target := new File("target/engine/renderer")
     )
   ) dependsOn(core)
   
   lazy val backendOpengl = Project(
     id = "engine-backend-opengl",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-backend-opengl"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-engine-backend-opengl",
       description := "Simplex3D Engine, Common OpenGL Backend.",
-      target := new File("target/engine/backend/opengl"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/backend-opengl")
+      target := new File("target/engine/backend/opengl")
     )
   ) dependsOn(core)
   
   lazy val backendLwjgl = Project(
     id = "engine-backend-lwjgl",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-backend-lwjgl"),
     settings = buildSettings ++ Common.publishSettings ++ Common.lwjglSettings ++ Seq(
       name := "simplex3d-engine-backend-lwjgl",
       description := "Simplex3D Engine, LWJGL Backend.",
-      target := new File("target/engine/backend/lwjgl"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/backend-lwjgl")
+      target := new File("target/engine/backend/lwjgl")
     )
   ) dependsOn(core, backendOpengl)
   
   lazy val vanilla = Project(
     id = "engine-vanilla",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-vanilla"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-engine-vanilla",
       description := "Simplex3D Engine, Default Implementation.",
-      target := new File("target/engine/vanilla"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/vanilla")
+      target := new File("target/engine/vanilla")
     )
   ) dependsOn(core, sceneGraph, renderer, backendOpengl, backendLwjgl)
   
   
-  lazy val doc = Project(
-    id = "engine-doc",
-    base = file("Simplex3dEngine"),
-    settings = buildSettings ++ Seq(
-      target := new File("target/engine/doc"),
-      sourceGenerators in Compile <+= baseDirectory map { base =>
-        val files = new ArrayBuffer[File]
-        def index(dir: File) = {
-          new FileSet(dir).foreach((path, _) => files += new File(dir, path))
-          files: Seq[File]
-        }
-        index(base / "src/core") ++
-        index(base / "src/scenegraph") ++
-        index(base / "src/renderer") ++
-        index(base / "src/vanilla")
-      }
-    )
-  ) dependsOn(
-    Simplex3dMath.core, Simplex3dMath.double,
-    Simplex3dData.core, Simplex3dData.double, Simplex3dData.format,
-    Simplex3dAlgorithm.intersection
-  )
+  //lazy val doc = Project(
+  //  id = "engine-doc",
+  //  base = file("simplex3d-engine"),
+  //  settings = buildSettings ++ Seq(
+  //    target := new File("target/engine/doc"),
+  //    sourceGenerators in Compile <+= baseDirectory map { base =>
+  //      val files = new ArrayBuffer[File]
+  //      def index(dir: File) = {
+  //        new FileSet(dir).foreach((path, _) => files += new File(dir, path))
+  //        files: Seq[File]
+  //      }
+  //      index(base / "src/core") ++
+  //      index(base / "src/scenegraph") ++
+  //      index(base / "src/renderer") ++
+  //      index(base / "src/vanilla")
+  //    }
+  //  )
+  //) dependsOn(
+   // Simplex3dMath.core, Simplex3dMath.double,
+   // Simplex3dData.core, Simplex3dData.double, Simplex3dData.format,
+   // Simplex3dAlgorithm.intersection
+ // )
   
   lazy val test = Project(
     id = "engine-test",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-test"),
     settings = buildSettings ++ Common.lwjglSettings ++ Seq(
       name := "simplex3d-engine-test",
       description := "Engine Tests.",
       licenses := Seq(("GPLv3+", new URL("http://www.gnu.org/licenses/gpl.html"))),
       target := new File("target/engine/test"),
       libraryDependencies += "org.scalatest" %% "scalatest" % Simplex3d.ScalatestVersion % "test",
-      unmanagedSourceDirectories in Compile <++= baseDirectory { base =>
-        Seq(
-          base / "/test/visual",
-          base / "test/bench"
-        )
-      },
-      scalaSource in Test <<= baseDirectory(_ / "test/unit")
-    )
-  ) dependsOn(
-    Simplex3dAlgorithm.mesh, Simplex3dAlgorithm.noise,
-    core, sceneGraph, renderer, backendOpengl, backendLwjgl, vanilla
-  )
+     unmanagedSourceDirectories in Compile <++= baseDirectory { base =>
+       Seq(
+         base / "/test/visual",
+         base / "test/bench"
+       )
+     },
+     scalaSource in Test <<= baseDirectory(_ / "test/unit")
+   )
+ ) dependsOn(
+   Simplex3dAlgorithm.mesh, Simplex3dAlgorithm.noise,
+   core, sceneGraph, renderer, backendOpengl, backendLwjgl, vanilla
+ )
   
   lazy val example = Project(
     id = "engine-example",
-    base = file("Simplex3dEngine"),
+    base = file("simplex3d-engine-example"),
     settings = buildSettings ++ Common.exampleSettings ++ Seq(
       target := new File("target/engine/example")
     )

@@ -38,62 +38,58 @@ object Simplex3dData extends Build {
   
   lazy val core = Project(
     id = "data-core",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-core"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-data-core",
       description := "Data Binding API, Core Module.",
       target := new File("target/data/core"),
-      libraryDependencies += "org.scala-lang" % "scala-reflect" % Simplex3d.ScalaVersion,
-      scalaSource in Compile <<= baseDirectory(_ / "src/core")
+      libraryDependencies += "org.scala-lang" % "scala-reflect" % Simplex3d.ScalaVersion
     )
   ) dependsOn(Simplex3dMath.core)
   
   lazy val double = Project(
     id = "data-double",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-double"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-data-double",
       description := "Data Binding API, Double Module.",
-      target := new File("target/data/double"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/double")
+      target := new File("target/data/double")
     )
   ) dependsOn(core, Simplex3dMath.double)
   
   lazy val float = Project(
     id = "data-float",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-float"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-data-float",
       description := "Data Binding API, Float Module.",
-      target := new File("target/data/float"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/float")
+      target := new File("target/data/float")
     )
   ) dependsOn(core, Simplex3dMath.float)
   
   lazy val format = Project(
     id = "data-format",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-format"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-data-format",
       description := "Additional data formats for Data Binding API.",
-      target := new File("target/data/format"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/format")
+      target := new File("target/data/format")
     )
   ) dependsOn(core, double, Simplex3dMath.double)
   
   
-  lazy val doc = Project(
-    id = "data-doc",
-    base = file("Simplex3dData"),
-    settings = buildSettings ++ Seq(
-      target := new File("target/data/doc"),
-      scalaSource in Compile <<= baseDirectory(_ / "src")
-    )
-  ) dependsOn(Simplex3dMath.core, Simplex3dMath.double, Simplex3dMath.float)
+ // lazy val doc = Project(
+ //   id = "data-doc",
+ //   base = file("simplex3d-data-doc"),
+ //   settings = buildSettings ++ Seq(
+ //     target := new File("target/data/doc"),
+ //     scalaSource in Compile <<= baseDirectory(_ / "src")
+ //   )
+ // ) dependsOn(Simplex3dMath.core, Simplex3dMath.double, Simplex3dMath.float)
   
   lazy val test = Project(
     id = "data-test",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-test"),
     settings = buildSettings ++ Common.testSettings ++ Seq(
       name := "simplex3d-data-test",
       description := "Data Binding API, Tests.",
@@ -104,7 +100,7 @@ object Simplex3dData extends Build {
   
   lazy val example = Project(
     id = "data-example",
-    base = file("Simplex3dData"),
+    base = file("simplex3d-data-example"),
     settings = buildSettings ++ Common.exampleSettings ++ Seq(
       target := new File("target/data/example")
     )

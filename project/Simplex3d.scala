@@ -44,8 +44,8 @@ object Simplex3d extends Build {
     settings = Common.buildSettings ++ Seq(
       target := new File("target/root")
     )
-  ) aggregate(root, rootTest, rootExample)
-  
+  ) aggregate(root, rootExample)
+  // aggregate(root, rootTest, rootExample)
   lazy val root = Project(
     id = "root",
     base = file("."),
@@ -56,25 +56,25 @@ object Simplex3d extends Build {
     Simplex3dMath.root, Simplex3dData.root, Simplex3dAlgorithm.root, Simplex3dEngine.root, Simplex3dScript.root, Simplex3dConsole.root
   )
   
-  lazy val rootDoc = Project(
-    id = "root-doc",
-    base = file("."),
-    settings = Common.buildSettings ++ Seq(
-      target := new File("target/root")
-    )
-  ) aggregate(
-    Simplex3dMath.doc, Simplex3dData.doc, Simplex3dAlgorithm.doc, Simplex3dEngine.doc, Simplex3dScript.core
-  )
+  //lazy val rootDoc = Project(
+  //  id = "root-doc",
+  //  base = file("."),
+  //  settings = Common.buildSettings ++ Seq(
+  //    target := new File("target/root")
+  // )
+  //) aggregate(
+  //  Simplex3dMath.doc, Simplex3dData.doc, Simplex3dAlgorithm.doc, Simplex3dEngine.doc, Simplex3dScript.core
+  //)
   
-  lazy val rootTest = Project(
-    id = "root-test",
-    base = file("."),
-    settings = Common.buildSettings ++ Seq(
-      target := new File("target/root")
-    )
-  ) aggregate(
-    Simplex3dMath.test, Simplex3dData.test, Simplex3dAlgorithm.test, Simplex3dEngine.test
-  )
+  //lazy val rootTest = Project(
+  //  id = "root-test",
+  //  base = file("."),
+  //  settings = Common.buildSettings ++ Seq(
+  //    target := new File("target/root")
+  //  )
+  //) aggregate(
+  //  Simplex3dMath.test, Simplex3dData.test, Simplex3dAlgorithm.test, Simplex3dEngine.test
+  //)
   
   lazy val rootExample = Project(
     id = "root-example",

@@ -37,64 +37,61 @@ object Simplex3dAlgorithm extends Build {
   
   lazy val intersection = Project(
     id = "algorithm-intersection",
-    base = file("Simplex3dAlgorithm"),
+    base = file("simplex3d-algorithm-intersection"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       version := Simplex3d.AlgorithmIntersectionVersion,
       name := "simplex3d-algorithm-intersection",
       description := "Intersection and Collision Algorithms.",
-      target := new File("target/algorithm/intersection"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/intersection")
+      target := new File("target/algorithm/intersection")
     )
   ) dependsOn(Simplex3dMath.core, Simplex3dMath.double)
   
   lazy val mesh = Project(
     id = "algorithm-mesh",
-    base = file("Simplex3dAlgorithm"),
+    base = file("simplex3d-algorithm-mesh"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       version := Simplex3d.AlgorithmMeshVersion,
       name := "simplex3d-algorithm-mesh",
       description := "Algorithms to generate and work with mesh data.",
-      target := new File("target/algorithm/mesh"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/mesh")
+      target := new File("target/algorithm/mesh")
     )
   ) dependsOn(Simplex3dMath.core, Simplex3dMath.double, Simplex3dData.core, Simplex3dData.double)
   
   lazy val noise = Project(
     id = "algorithm-noise",
-    base = file("Simplex3dAlgorithm"),
+    base = file("simplex3d-algorithm-noise"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       version := Simplex3d.AlgorithmNoiseVersion,
       name := "simplex3d-algorithm-noise",
       description := "Noise Algorithms.",
-      target := new File("target/algorithm/noise"),
-      scalaSource in Compile <<= baseDirectory(_ / "src/noise")
+      target := new File("target/algorithm/noise")
     )
   ) dependsOn(Simplex3dMath.core, Simplex3dMath.double)
   
   
-  lazy val doc = Project(
-    id = "algorithm-doc",
-    base = file("Simplex3dAlgorithm"),
-    settings = buildSettings ++ Seq(
-      target := new File("target/algorithm/doc"),
-      scalaSource in Compile <<= baseDirectory(_ / "src")
-    )
-  ) dependsOn(Simplex3dMath.core, Simplex3dMath.double, Simplex3dData.core, Simplex3dData.double)
+ // lazy val doc = Project(
+    //id = "algorithm-doc",
+    //base = file("simplex3d-algorithm"),
+    //settings = buildSettings ++ Seq(
+//      target := new File("target/algorithm/doc"),
+  //    scalaSource in Compile <<= baseDirectory(_ / "src")
+//    )
+  //) dependsOn(Simplex3dMath.core, Simplex3dMath.double, Simplex3dData.core, Simplex3dData.double)
   
-  lazy val test = Project(
-    id = "algorithm-test",
-    base = file("Simplex3dAlgorithm"),
-    settings = buildSettings ++ Common.testSettings ++ Seq(
-      name := "simplex3d-algorithm-test",
-      description := "Algorithm Tests.",
-      licenses := Seq(("GPLv3+", new URL("http://www.gnu.org/licenses/gpl.html"))),
-      target := new File("target/algorithm/test")
-    )
-  ) dependsOn(intersection, mesh, noise)
+  //lazy val test = Project(
+   //id = "algorithm-test",
+   //base = file("simplex3d-algorithm-test"),
+   //settings = buildSettings ++ Common.testSettings ++ Seq(
+      //name := "simplex3d-algorithm-test",
+      //description := "Algorithm Tests.",
+      //licenses := Seq(("GPLv3+", new URL("http://www.gnu.org/licenses/gpl.html"))),
+      //target := new File("target/algorithm/test")
+    //)
+  //) dependsOn(intersection, mesh, noise)
   
   lazy val example = Project(
     id = "algorithm-example",
-    base = file("Simplex3dAlgorithm"),
+    base = file("simplex3d-algorithm-example"),
     settings = buildSettings ++ Common.exampleSettings ++ Seq(
       target := new File("target/algorithm/example")
     )

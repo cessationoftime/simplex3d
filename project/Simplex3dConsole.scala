@@ -73,13 +73,12 @@ object Simplex3dConsole extends Build {
   
   lazy val core = Project(
     id = "console",
-    base = file("Simplex3dConsole"),
+    base = file("simplex3d-console-core"),
     settings = buildSettings ++ Common.lwjglSettings ++ Seq(
       target := new File("target/console"),
       mainClass := Some("simplex3d.console.ConsoleFrame"),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
       unmanagedJars in Compile <<= baseDirectory map { base => (base / "lib" ** "*.jar").classpath },
-      scalaSource in Compile <<= baseDirectory(_ / "src"),
       
       compile in Compile <<= (scalaSource in Compile, classDirectory in Compile, dependencyClasspath in Compile, compile in Compile) map { (src, classes, cp, compileRes) =>
         val (scalaFiles, simplexFiles, exampleFiles, mainFiles, otherDeps) = extractFileSets(classes, cp)
@@ -102,7 +101,7 @@ object Simplex3dConsole extends Build {
   
   lazy val webstart = Project(
     id = "console-webstart",
-    base = file("Simplex3dConsole"),
+    base = file("simplex3d-console-webstart"),
     settings = buildSettings ++ Seq(
       target := new File("target/console/webstart"),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-library" % _),

@@ -28,7 +28,7 @@ import java.util.HashSet
 import java.util.Stack
 import scala.collection._
 import scala.collection.mutable.ArrayBuffer
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._
 

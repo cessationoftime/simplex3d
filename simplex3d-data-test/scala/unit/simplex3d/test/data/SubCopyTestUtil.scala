@@ -24,7 +24,7 @@ import org.scalatest._
 import simplex3d.data._
 import simplex3d.data.extension._
 import simplex3d.math._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble.functions._
 import TestUtil._
 import CopyTestUtil._
 

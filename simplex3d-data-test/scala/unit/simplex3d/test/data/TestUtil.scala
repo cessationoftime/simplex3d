@@ -28,13 +28,13 @@ import scala.reflect.runtime.universe._
 import simplex3d.data._
 import simplex3d.data.RawEnum._
 import simplex3d.data._
-import simplex3d.data.float._
-import simplex3d.data.double._
+import simplex3d.data.precisionsingle._
+import simplex3d.data.precisiondouble._
 import simplex3d.data.extension._
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.doublex._
-import simplex3d.math.doublex.functions._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondoublex._
+import simplex3d.math.precisiondoublex.functions._
 
 import Descriptors._
 

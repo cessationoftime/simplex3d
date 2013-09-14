@@ -1,8 +1,8 @@
 package simplex3d.example.math.advanced
 
 import simplex3d.math._
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 
 
 /**

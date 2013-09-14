@@ -24,8 +24,8 @@ import org.scalatest._
 import java.util.Random
 
 import simplex3d.math._
-import simplex3d.math.double._
-import simplex3d.math.doublex.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondoublex.functions._
 import scala.Double.{
   NaN => nan,
   PositiveInfinity => posinf,

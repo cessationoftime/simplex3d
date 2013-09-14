@@ -21,7 +21,7 @@
 package simplex3d.engine.input
 
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 abstract class Mouse {

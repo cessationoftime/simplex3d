@@ -21,7 +21,7 @@
 package simplex3d.engine
 
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.engine.util._
 import simplex3d.engine.input._
 import simplex3d.engine.graphics._

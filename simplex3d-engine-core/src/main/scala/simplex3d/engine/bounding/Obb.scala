@@ -21,7 +21,7 @@
 package simplex3d.engine
 package bounding
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 /** Oriented Bounding Box is defined by local min and max and an additional volume transformation.

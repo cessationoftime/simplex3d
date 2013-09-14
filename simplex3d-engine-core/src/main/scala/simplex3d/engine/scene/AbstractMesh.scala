@@ -21,7 +21,7 @@
 package simplex3d.engine
 package scene
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._
 import simplex3d.engine.bounding._

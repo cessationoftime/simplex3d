@@ -23,7 +23,7 @@ package simplex3d.test.math.doublex
 import org.scalatest._
 
 import simplex3d.math._
-import simplex3d.math.floatx._
+import simplex3d.math.precisionsinglex._
 
 
 /**
@@ -37,7 +37,7 @@ class PromotionsTest extends FunSuite {
   )
 
   test("Promotions") {
-    import simplex3d.math.doublex._
+    import simplex3d.math.precisiondoublex._
 
     val ci2: ConstVec2d = Vec2i(1, 2)
     expectResult(classOf[ConstVec2d]) { ci2.getClass }
@@ -106,7 +106,7 @@ class PromotionsTest extends FunSuite {
   }
 
   test("Renamed promotions") {
-    import simplex3d.math.double._
+    import simplex3d.math.precisiondouble._
 
     val ci2: ConstVec2 = Vec2i(1, 2)
     expectResult(classOf[ConstVec2]) { ci2.getClass }

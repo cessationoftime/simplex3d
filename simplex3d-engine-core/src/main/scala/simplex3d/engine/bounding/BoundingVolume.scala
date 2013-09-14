@@ -22,7 +22,7 @@ package simplex3d.engine
 package bounding
 
 import simplex3d.math.types._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.algorithm.intersection._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._

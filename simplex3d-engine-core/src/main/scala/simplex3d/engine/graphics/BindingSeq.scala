@@ -26,7 +26,7 @@ import java.util.HashMap
 import scala.reflect.runtime.universe._
 import scala.collection.mutable.ArrayBuffer
 import simplex3d.math.types._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.engine.util._
 
 

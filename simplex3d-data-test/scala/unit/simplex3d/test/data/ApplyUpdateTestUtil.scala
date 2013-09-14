@@ -25,11 +25,11 @@ import org.scalatest._
 import java.nio._
 import scala.reflect._
 import simplex3d.data._
-import simplex3d.data.float._
-import simplex3d.data.double._
+import simplex3d.data.precisionsingle._
+import simplex3d.data.precisiondouble._
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.doublex._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondoublex._
 
 import RawEnum._
 import TestUtil._

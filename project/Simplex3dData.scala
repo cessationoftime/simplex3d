@@ -39,19 +39,19 @@ object Simplex3dData extends Build {
   ) dependsOn(Simplex3dMath.core)
   
   lazy val double = Project(
-    id = "data-double",
-    base = file("simplex3d-data-double"),
+    id = "data-precisiondouble",
+    base = file("simplex3d-data-precisiondouble"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
-      name := "simplex3d-data-double",
+      name := "simplex3d-data-precisiondouble",
       description := "Data Binding API, Double Module."
     )
   ) dependsOn(core, Simplex3dMath.double)
   
   lazy val float = Project(
-    id = "data-float",
-    base = file("simplex3d-data-float"),
+    id = "data-precisionsingle",
+    base = file("simplex3d-data-precisionsingle"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
-      name := "simplex3d-data-float",
+      name := "simplex3d-data-precisionsingle",
       description := "Data Binding API, Float Module."
     )
   ) dependsOn(core, Simplex3dMath.float)

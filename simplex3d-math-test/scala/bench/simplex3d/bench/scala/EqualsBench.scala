@@ -21,7 +21,7 @@
 package simplex3d.bench.scala
 
 import simplex3d.math._
-import simplex3d.math.float._
+import simplex3d.math.precisionsingle._
 
 
 /**

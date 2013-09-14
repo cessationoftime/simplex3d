@@ -22,7 +22,7 @@ package simplex3d.renderer
 
 import scala.annotation._
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._

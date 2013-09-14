@@ -26,9 +26,9 @@ import java.io._
 import scala.collection.mutable.ArrayBuilder
 import java.util.HashMap
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 
 
 trait StreamLoader extends AssetLoader {

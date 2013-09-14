@@ -1,7 +1,7 @@
 package simplex3d.example.algorithm.noise.advanced
 
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.algorithm.noise._
 import simplex3d.script.ImageUtils._
 

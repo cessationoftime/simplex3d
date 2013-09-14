@@ -68,7 +68,7 @@ class ConversionTest extends FunSuite {
     val c = conversion.Float.toHFloat(testValue)
     assert(c == converted)
 
-    import simplex3d.math.floatx.functions._
+    import simplex3d.math.precisionsinglex.functions._
     if (isnan(testValue)) assert(isnan(convertedBack))
     else assert(conversion.Float.fromHFloat(c) == convertedBack)
   }
@@ -342,7 +342,7 @@ class ConversionTest extends FunSuite {
     val c = conversion.Double.toHFloat(testValue)
     assert(c == converted)
 
-    import simplex3d.math.doublex.functions._
+    import simplex3d.math.precisiondoublex.functions._
     if (isnan(testValue)) assert(isnan(convertedBack))
     else assert(conversion.Double.fromHFloat(c) == convertedBack)
   }

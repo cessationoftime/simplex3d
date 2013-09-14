@@ -21,7 +21,7 @@
 package simplex3d.engine
 package graphics
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 sealed abstract class ReadPrimitive extends prototype.ReadStruct {

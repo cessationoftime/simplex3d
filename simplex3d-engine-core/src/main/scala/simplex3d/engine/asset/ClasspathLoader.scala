@@ -23,9 +23,9 @@ package simplex3d.engine.asset
 import javax.imageio.ImageIO
 import java.io._
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 
 
 class ClasspathLoader extends StreamLoader {

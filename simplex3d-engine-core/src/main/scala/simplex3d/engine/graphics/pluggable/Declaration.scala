@@ -24,7 +24,7 @@ package graphics.pluggable
 import scala.reflect.runtime.universe._
 import scala.collection._
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.math.types._
 import simplex3d.data._
 import simplex3d.engine.util._

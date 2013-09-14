@@ -22,7 +22,7 @@ package simplex3d.engine
 package input
 
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 case class MouseButtonEvent(val buttonCode: Int, val location: Option[ConstVec2i], val time: TimeStamp)

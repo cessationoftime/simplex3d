@@ -29,9 +29,9 @@ import java.awt.event.WindowEvent
 import java.awt.image.BufferedImage
 import javax.swing._
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 import conversion.Double._
 
 

@@ -21,7 +21,7 @@
 package simplex3d.renderer
 package texturing
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.engine.graphics._
 
 

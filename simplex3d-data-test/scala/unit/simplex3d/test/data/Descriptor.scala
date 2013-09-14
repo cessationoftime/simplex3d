@@ -25,8 +25,8 @@ import scala.reflect._
 import simplex3d.data.{PrimitiveFormat => Man, _}
 import simplex3d.data.RawEnum._
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.doublex._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondoublex._
 
 
 /**

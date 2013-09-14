@@ -38,19 +38,19 @@ object Simplex3dMath extends Build {
   )
   
   lazy val double = Project(
-    id = "math-double",
-    base = file("simplex3d-math-double"),
+    id = "math-precisiondouble",
+    base = file("simplex3d-math-precisiondouble"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
-      name := "simplex3d-math-double",
+      name := "simplex3d-math-precisiondouble",
       description := "Vector Math DSL, Double Module."
     )
   ) dependsOn(core)
   
   lazy val float = Project(
-    id = "math-float",
-    base = file("simplex3d-math-float"),
+    id = "math-precisionsingle",
+    base = file("simplex3d-math-precisionsingle"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
-      name := "simplex3d-math-float",
+      name := "simplex3d-math-precisionsingle",
       description := "Vector Math DSL, Float Module."
     )
   ) dependsOn(core)

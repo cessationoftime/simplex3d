@@ -21,7 +21,7 @@
 package simplex3d.engine
 package bounding
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 /** Axis Aligned Bounding Box is defined in world coordinates.

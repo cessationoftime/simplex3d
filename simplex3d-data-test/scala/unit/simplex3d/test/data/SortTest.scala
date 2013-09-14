@@ -22,11 +22,11 @@ package simplex3d.test.data
 
 import org.scalatest._
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.doublex._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondoublex._
 import simplex3d.data._
-import simplex3d.data.float._
-import simplex3d.data.double._
+import simplex3d.data.precisionsingle._
+import simplex3d.data.precisiondouble._
 
 import Descriptors._
 import SortTestUtil._

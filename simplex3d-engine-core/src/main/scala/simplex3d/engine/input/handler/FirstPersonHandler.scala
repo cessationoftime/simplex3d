@@ -23,8 +23,8 @@ package input
 package handler
 
 import simplex3d.math._
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.engine.input._
 import simplex3d.engine.graphics._
 import simplex3d.engine.transformation._

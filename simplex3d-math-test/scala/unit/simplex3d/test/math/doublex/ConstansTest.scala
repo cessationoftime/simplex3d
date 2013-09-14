@@ -21,7 +21,7 @@
 package simplex3d.test.math.doublex
 
 import org.scalatest._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 /**

@@ -22,8 +22,8 @@ package simplex3d.bench.math
 
 import scala.language.implicitConversions
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.double._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondouble._
 
 
 /**

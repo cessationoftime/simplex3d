@@ -23,7 +23,7 @@ package simplex3d.test.math.doublex
 import org.scalatest._
 
 import simplex3d.math._
-import simplex3d.math.floatx._
+import simplex3d.math.precisionsinglex._
 
 
 /**
@@ -32,7 +32,7 @@ import simplex3d.math.floatx._
 class PackageTest extends FunSuite {
 
   test("Regular package") {
-    import simplex3d.math.doublex._
+    import simplex3d.math.precisiondoublex._
 
     // implicits
     val i2 = 2.0d*Vec2i(1)
@@ -174,7 +174,7 @@ class PackageTest extends FunSuite {
   }
 
   test("Renamed package") {
-    import simplex3d.math.double._
+    import simplex3d.math.precisiondouble._
 
     // implicits
     val i2 = 2.0d*Vec2i(1)

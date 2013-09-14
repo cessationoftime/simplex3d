@@ -20,7 +20,7 @@
 
 package simplex3d.test.math.floatx
 
-import simplex3d.math.float._
+import simplex3d.math.precisionsingle._
 
 
 /**

@@ -23,7 +23,7 @@ package simplex3d.bench.scala
 import java.nio._
 
 import simplex3d.math._
-import simplex3d.math.floatx._
+import simplex3d.math.precisionsinglex._
 
 
 /**

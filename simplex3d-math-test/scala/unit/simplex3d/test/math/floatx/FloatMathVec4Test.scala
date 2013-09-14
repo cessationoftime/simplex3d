@@ -23,8 +23,8 @@ package simplex3d.test.math.floatx
 import org.scalatest._
 
 import simplex3d.math._
-import simplex3d.math.float.{functions => fn, _}
-import simplex3d.math.float.functions._
+import simplex3d.math.precisionsingle.{functions => fn, _}
+import simplex3d.math.precisionsingle.functions._
 import scala.Float.{
   NaN => nan,
   PositiveInfinity => posinf,

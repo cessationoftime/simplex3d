@@ -21,9 +21,9 @@
 package simplex3d.engine.asset
 
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 
 
 // XXX split asset loader into format resolver and format loader

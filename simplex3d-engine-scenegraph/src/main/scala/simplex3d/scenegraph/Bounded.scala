@@ -21,8 +21,8 @@
 package simplex3d.scenegraph
 
 import scala.collection.mutable.ArrayBuffer
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.algorithm._
 import simplex3d.algorithm.intersection.Collision
 import simplex3d.engine._

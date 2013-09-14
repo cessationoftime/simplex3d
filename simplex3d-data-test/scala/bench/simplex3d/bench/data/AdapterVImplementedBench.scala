@@ -24,9 +24,9 @@ package simplex3d.bench.data
 import java.nio._
 
 import simplex3d.math._
-import simplex3d.math.float._
+import simplex3d.math.precisionsingle._
 import simplex3d.data._
-import simplex3d.data.float._
+import simplex3d.data.precisionsingle._
 import simplex3d.data.extension._
 
 

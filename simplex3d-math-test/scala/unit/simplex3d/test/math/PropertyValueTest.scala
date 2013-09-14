@@ -25,9 +25,9 @@ import scala.annotation._
 import org.scalatest._
 import simplex3d.math.types._
 import simplex3d.math._
-import simplex3d.math.floatx._
-import simplex3d.math.doublex._
-import simplex3d.math.doublex.functions._
+import simplex3d.math.precisionsinglex._
+import simplex3d.math.precisiondoublex._
+import simplex3d.math.precisiondoublex.functions._
 
 
 /**

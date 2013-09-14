@@ -21,7 +21,7 @@
 package simplex3d.engine
 package bounding
 
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 /** Object Aligned Bounding Box is a special case of Oriented Bounding Box

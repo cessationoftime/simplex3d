@@ -24,9 +24,9 @@ import scala.reflect._
 import scala.collection.mutable.ArrayBuffer
 import simplex3d.math.types._
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 import simplex3d.engine.graphics._
 
 

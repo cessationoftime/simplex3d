@@ -25,9 +25,9 @@ import scala.reflect._
 import org.scalatest._
 import simplex3d.data._
 import simplex3d.data.extension._
-import simplex3d.math.floatx.{functions => fx, _}
-import simplex3d.math.doublex.{functions => dx, _}
-import simplex3d.math.doublex.functions._
+import simplex3d.math.precisionsinglex.{functions => fx, _}
+import simplex3d.math.precisiondoublex.{functions => dx, _}
+import simplex3d.math.precisiondoublex.functions._
 
 import TestUtil._
 import AttributeTestUtil._

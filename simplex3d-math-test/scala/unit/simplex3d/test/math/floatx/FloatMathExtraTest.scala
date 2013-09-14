@@ -24,8 +24,8 @@ import org.scalatest._
 import java.util.Random
 
 import simplex3d.math._
-import simplex3d.math.float._
-import simplex3d.math.floatx.functions._
+import simplex3d.math.precisionsingle._
+import simplex3d.math.precisionsinglex.functions._
 import scala.Float.{
   NaN => nan,
   PositiveInfinity => posinf,

@@ -21,8 +21,8 @@
 package simplex3d.bench.math
 
 import simplex3d.math._
-import simplex3d.math.doublex._
-import simplex3d.math.doublex.functions._
+import simplex3d.math.precisiondoublex._
+import simplex3d.math.precisiondoublex.functions._
 
 
 /**

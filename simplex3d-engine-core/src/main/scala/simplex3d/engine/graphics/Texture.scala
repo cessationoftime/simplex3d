@@ -24,11 +24,11 @@ package graphics
 import scala.reflect._
 import simplex3d.math.types._
 import simplex3d.math._
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.data.extension._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 import simplex3d.engine.util._
 
 

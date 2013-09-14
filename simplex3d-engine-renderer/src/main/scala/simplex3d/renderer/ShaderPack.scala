@@ -22,7 +22,7 @@ package simplex3d.renderer
 
 import scala.collection.mutable.ArrayBuilder
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 import simplex3d.engine._
 import simplex3d.engine.graphics._
 import simplex3d.engine.graphics.pluggable._

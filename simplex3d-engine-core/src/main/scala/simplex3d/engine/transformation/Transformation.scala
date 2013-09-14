@@ -22,8 +22,8 @@ package simplex3d.engine
 package transformation
 
 import simplex3d.math.types._
-import simplex3d.math.double._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._
 

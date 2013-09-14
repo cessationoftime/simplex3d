@@ -192,8 +192,8 @@ final class ParallelLoop extends simplex3d.engine.MainLoop {
     def position() = if (input.mouse.isGrabbed) None else Some(ConstVec2i(RawMouse.getEventX(), RawMouse.getEventY()))
     while (RawMouse.next()) {
       import simplex3d.math._
-      import simplex3d.math.double._
-      import simplex3d.math.double.functions._
+      import simplex3d.math.precisiondouble._
+      import simplex3d.math.precisiondouble.functions._
       
       val delta = ConstVec2(RawMouse.getEventDX, RawMouse.getEventDY)
       

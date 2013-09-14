@@ -22,9 +22,9 @@ package simplex3d.test.data
 package double
 
 import org.scalatest._
-import simplex3d.math.doublex._
+import simplex3d.math.precisiondoublex._
 import simplex3d.data._
-import simplex3d.data.double._
+import simplex3d.data.precisiondouble._
 
 import Descriptors._
 import FactoryTestUtil._

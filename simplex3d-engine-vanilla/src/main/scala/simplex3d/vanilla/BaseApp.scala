@@ -22,7 +22,7 @@ package simplex3d.vanilla
 
 import scala.collection.mutable.ArrayBuffer
 import simplex3d.math._
-import simplex3d.math.double.functions._
+import simplex3d.math.precisiondouble.functions._
 import simplex3d.engine._
 import simplex3d.engine.util._
 import simplex3d.engine.graphics._

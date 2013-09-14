@@ -22,7 +22,7 @@ package simplex3d.engine
 package scene
 
 import simplex3d.math._
-import simplex3d.math.double._
+import simplex3d.math.precisiondouble._
 
 
 trait AbstractCamera extends Spatial {

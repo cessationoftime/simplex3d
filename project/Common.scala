@@ -33,8 +33,12 @@ object Common extends Build {
     publishLocal := {},
     scalacOptions ++= Seq("-deprecation", "-target:jvm-1.6", "-feature"),
     javacOptions ++= Seq("-source", "1.6", "-target", "1.6"),
-    maxErrors := 20
+    maxErrors := 20,
+	shellPrompt := { "%s > " format projectId(_) }
   )
+  
+  def projectId(state: State) = extracted(state).currentProject.id
+  def extracted(state: State) = Project extract state
   
   private val publishDefaults = Defaults.defaultSettings.filter { s =>
     val name = s.key.key.label

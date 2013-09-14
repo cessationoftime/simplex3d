@@ -103,6 +103,7 @@ object Simplex3dConsole extends Build {
     id = "console-webstart",
     base = file("simplex3d-console-webstart"),
     settings = buildSettings ++ Seq(
+	  name := "simplex3d-console-webstart",
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-library" % _),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
       unmanagedJars in Compile <<= baseDirectory map { base => (base / "lib" ** "*.jar").classpath },

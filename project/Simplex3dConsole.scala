@@ -75,7 +75,6 @@ object Simplex3dConsole extends Build {
     id = "console",
     base = file("simplex3d-console-core"),
     settings = buildSettings ++ Common.lwjglSettings ++ Seq(
-      target := new File("target/console"),
       mainClass := Some("simplex3d.console.ConsoleFrame"),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
       unmanagedJars in Compile <<= baseDirectory map { base => (base / "lib" ** "*.jar").classpath },
@@ -103,7 +102,6 @@ object Simplex3dConsole extends Build {
     id = "console-webstart",
     base = file("simplex3d-console-webstart"),
     settings = buildSettings ++ Seq(
-      target := new File("target/console/webstart"),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-library" % _),
       libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _),
       unmanagedJars in Compile <<= baseDirectory map { base => (base / "lib" ** "*.jar").classpath },

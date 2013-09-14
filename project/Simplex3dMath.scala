@@ -28,21 +28,12 @@ object Simplex3dMath extends Build {
     licenses := Seq(("LGPLv3+", new URL("http://www.gnu.org/licenses/lgpl.html")))
   )
   
-  lazy val root = Project(
-    id = "math",
-    base = file("."),
-    settings = buildSettings ++ Seq(
-      target := new File("target/math")
-    )
-  ) aggregate(core, double, float)
-  
   lazy val core = Project(
     id = "math-core",
     base = file("simplex3d-math-core"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-core",
-      description := "Vector Math DSL, Core Module.",
-      target := new File("target/math/core")
+      description := "Vector Math DSL, Core Module."
     )
   )
   
@@ -51,8 +42,7 @@ object Simplex3dMath extends Build {
     base = file("simplex3d-math-double"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-double",
-      description := "Vector Math DSL, Double Module.",
-      target := new File("target/math/double")
+      description := "Vector Math DSL, Double Module."
     )
   ) dependsOn(core)
   
@@ -61,8 +51,7 @@ object Simplex3dMath extends Build {
     base = file("simplex3d-math-float"),
     settings = buildSettings ++ Common.publishSettings ++ Seq(
       name := "simplex3d-math-float",
-      description := "Vector Math DSL, Float Module.",
-      target := new File("target/math/float")
+      description := "Vector Math DSL, Float Module."
     )
   ) dependsOn(core)
   
@@ -86,17 +75,14 @@ object Simplex3dMath extends Build {
     settings = buildSettings ++ Common.testSettings ++ Seq(
       name := "simplex3d-math-test",
       description := "Vector Math DSL, Tests.",
-      licenses := Seq(("GPLv3+", new URL("http://www.gnu.org/licenses/gpl.html"))),
-      target := new File("target/math/test")
+      licenses := Seq(("GPLv3+", new URL("http://www.gnu.org/licenses/gpl.html")))
     )
   ) dependsOn(core, double, float)
   
   lazy val example = Project(
     id = "math-example",
     base = file("simplex3d-math-example"),
-    settings = buildSettings ++ Common.exampleSettings ++ Seq(
-      target := new File("target/math/example")
-    )
+    settings = buildSettings ++ Common.exampleSettings
   ) dependsOn(core, double, Simplex3dScript.core)
 }
 

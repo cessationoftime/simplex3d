@@ -28,15 +28,14 @@ object Simplex3dScript extends Build {
     licenses := Seq(("LGPLv3+", new URL("http://www.gnu.org/licenses/lgpl.html")))
   )
 
-  lazy val root = core
+  //lazy val root = core
   
   lazy val core = Project(
     id = "script",
     base = file("simplex3d-script-core"),
     settings = buildSettings ++ Seq(
       name := "simplex3d-script",
-      description := "Scripting API.",
-      target := new File("target/script")
+      description := "Scripting API."
     )
   ) dependsOn(
     Simplex3dMath.core, Simplex3dMath.double,
@@ -48,8 +47,6 @@ object Simplex3dScript extends Build {
   lazy val example = Project(
     id = "script-example",
     base = file("simplex3d-script-example"),
-    settings = buildSettings ++ Common.exampleSettings ++ Seq(
-      target := new File("target/script/example")
-    )
+    settings = buildSettings ++ Common.exampleSettings
   ) dependsOn(core)
 }

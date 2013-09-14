@@ -1,4 +1,7 @@
-
+.project
+*.classpath
+*.settings
+.history
 **/nbproject/private
 build
 dist

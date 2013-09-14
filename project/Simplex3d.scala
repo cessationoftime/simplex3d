@@ -38,23 +38,24 @@ object Simplex3d extends Build {
   val ScalatestVersion = "1.9.1"
   
   
-  lazy val allCode = Project(
-    id = "all-code",
-    base = file("."),
-    settings = Common.buildSettings ++ Seq(
-      target := new File("target/root")
-    )
-  ) aggregate(root, rootExample)
+  //lazy val allCode = Project(
+   // id = "all-code",
+   // base = file("."),
+   // settings = Common.buildSettings ++ Seq(
+   //   target := new File("target/root")
+  //  )
+  //) aggregate(root, rootExample)
   // aggregate(root, rootTest, rootExample)
-  lazy val root = Project(
-    id = "root",
-    base = file("."),
-    settings = Common.buildSettings ++ Seq(
-      target := new File("target/root")
-    )
-  ) aggregate(
-    Simplex3dMath.root, Simplex3dData.root, Simplex3dAlgorithm.root, Simplex3dEngine.root, Simplex3dScript.root, Simplex3dConsole.root
-  )
+  
+  //lazy val root = Project(
+  //  id = "root",
+  //  base = file("."),
+  //  settings = Common.buildSettings ++ Seq(
+  //    target := new File("target/root")
+  //  )
+  //) aggregate(
+  //  Simplex3dMath.root, Simplex3dData.root, Simplex3dAlgorithm.root, Simplex3dEngine.root, Simplex3dScript.root, Simplex3dConsole.root
+  //)
   
   //lazy val rootDoc = Project(
   //  id = "root-doc",
@@ -76,13 +77,13 @@ object Simplex3d extends Build {
   //  Simplex3dMath.test, Simplex3dData.test, Simplex3dAlgorithm.test, Simplex3dEngine.test
   //)
   
-  lazy val rootExample = Project(
-    id = "root-example",
-    base = file("."),
-    settings = Common.buildSettings ++ Seq(
-      target := new File("target/root")
-    )
-  ) aggregate(
-    Simplex3dMath.example, Simplex3dData.example, Simplex3dAlgorithm.example, Simplex3dEngine.example, Simplex3dScript.example
-  )
+  //lazy val rootExample = Project(
+  //  id = "root-example",
+  //  base = file("."),
+  //  settings = Common.buildSettings ++ Seq(
+  //    target := new File("target/root")
+  //  )
+  //) aggregate(
+  //  Simplex3dMath.example, Simplex3dData.example, Simplex3dAlgorithm.example, Simplex3dEngine.example, Simplex3dScript.example
+  //)
 }
